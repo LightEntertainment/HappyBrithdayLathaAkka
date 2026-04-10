@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+  <title>🎬 Happy Birthday Latha Akka</title>
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+<!-- Letterbox bars -->
+<div class="letterbox-top"></div>
+<div class="letterbox-bot"></div>
+
+<!-- Confetti + particle canvases -->
+<canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+<canvas id="particleCanvas"></canvas>
+
+<!-- Screen flash overlay -->
+<div class="screen-flash" id="screenFlash"></div>
+
+<!-- Progress dots -->
+<div class="progress-track" id="progTrack" style="display:none"></div>
+
+<!-- Music - Kannukkulle from Sita Ramam -->
+<!-- Place your "kannukkulle.mp3" file in the same folder as index.html -->
+<audio id="bgMusic" loop preload="auto">
+  <source src="kannukkulle.mp3" type="audio/mpeg">
+</audio>
+
+<!-- ═══════════ SCENE 0: AGE REVEAL ═══════════ -->
+<div class="scene active" id="scene0">
+  <div class="intro-glow"></div>
+  <div class="age-wrap" id="ageWrap">
+    <div class="age-number" id="age33">33</div>
+    <div class="age-number age-new" id="age34">34</div>
+  </div>
+  <div class="age-shards" id="ageShards"></div>
+  <div class="intro-text" id="startBtn">Tap</div>
+</div>
+
+<!-- ═══════════ SCENE RAJINI TITLE CARD ═══════════ -->
+<div class="scene" id="sceneRajini">
+  <div class="rajini-bg"></div>
+  <div class="rajini-sparks" id="rajiniSparks"></div>
+  <div class="rajini-center">
+    <div class="rajini-title" id="rajiniTitle"></div>
+    <div class="rajini-name" id="rajiniName"></div>
+  </div>
+  <div class="rajini-line"></div>
+</div>
+
+<!-- ═══════════ SCENE 2: TAMIL ═══════════ -->
+<div class="scene lang-scene" id="scene2" style="--bg1:#7b2d8e;--bg2:#1a0520">
+  <div class="lang-badge">🌺</div>
+  <div class="lang-wish">இனிய பிறந்தநாள்<br>வாழ்த்துக்கள்!</div>
+  <div class="lang-sub">என் அன்பான <span class="gold-latha">லதா</span> அக்காவிற்கு 💕</div>
+</div>
+
+<!-- ═══════════ SCENE 3: ENGLISH ═══════════ -->
+<div class="scene lang-scene" id="scene3" style="--bg1:#1a4a7a;--bg2:#000a1a">
+  <div class="lang-badge">🌸</div>
+  <div class="lang-wish">Happy Birthday,<br>Dear <span class="gold-latha">Latha</span> Akka!</div>
+  <div class="lang-sub">Wishing you joy, love & happiness 💖</div>
+</div>
+
+<!-- ═══════════ SCENE 4: TELUGU ═══════════ -->
+<div class="scene lang-scene" id="scene4" style="--bg1:#0d5e3a;--bg2:#001a0d">
+  <div class="lang-badge">🌼</div>
+  <div class="lang-wish">జన్మదిన<br>శుభాకాంక్షలు, <span class="gold-latha">లతా</span> అక్కా!</div>
+  <div class="lang-sub">మీకు అన్ని శుభాలు కలగాలి 💛</div>
+</div>
+
+<!-- ═══════════ SCENE 5: HINDI ═══════════ -->
+<div class="scene lang-scene" id="scene5" style="--bg1:#7a2040;--bg2:#1a0010">
+  <div class="lang-badge">🌹</div>
+  <div class="lang-wish">जन्मदिन की<br>शुभकामनाएं, <span class="gold-latha">लता</span> दीदी!</div>
+  <div class="lang-sub">आपको ढेर सारी खुशियाँ मिलें 🌹</div>
+</div>
+
+<!-- ═══════════ SCENE 6: URDU ═══════════ -->
+<div class="scene lang-scene" id="scene6" style="--bg1:#4a2080;--bg2:#0a0020">
+  <div class="lang-badge">🌙</div>
+  <div class="lang-wish" style="direction:rtl">سالگرہ مبارک ہو،<br>میری پیاری <span class="gold-latha">لتا</span> بہن!</div>
+  <div class="lang-sub" style="direction:rtl">آپ کو خوشیاں ملیں ہمیشہ 💜</div>
+</div>
+
+<!-- ═══════════ SKILL SCENES (one per skill) ═══════════ -->
+<div class="scene skill-scene" id="skillPowerBI">
+  <div class="sk-visual" id="skVisPBI">
+    <div class="dash">
+      <div class="dash-sidebar"><div class="ds-item"></div><div class="ds-item"></div><div class="ds-item"></div><div class="ds-item"></div></div>
+      <div class="dash-main">
+        <div class="dash-card dc1"><div class="mini-bar" style="--h:70%"></div><div class="mini-bar" style="--h:90%"></div><div class="mini-bar" style="--h:55%"></div><div class="mini-bar" style="--h:85%"></div><div class="mini-bar" style="--h:95%"></div></div>
+        <div class="dash-card dc2"><div class="donut"><div class="donut-fill"></div><div class="donut-hole">95%</div></div></div>
+        <div class="dash-card dc3"><div class="mini-line"></div></div>
+        <div class="dash-card dc4"><div class="kpi">95%</div><div class="kpi-sub">Entertainment</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="sk-score">Good Soul <span class="gold-latha">95%</span></div>
+</div>
+
+<div class="scene skill-scene" id="skillData">
+  <div class="sk-visual" id="skVisData">
+    <div class="data-grid">
+      <div class="data-row dh"><span>Time</span><span>Degree</span><span>Relationship</span><span>Diplomacy</span></div>
+      <div class="data-row" style="--d:.3s"><span>9'o Clock</span><span>0°</span><span>Thambi</span><span class="data-up">wait for your reply</span></div>
+      <div class="data-row" style="--d:.5s"><span>5'o Clock</span><span>230°</span><span>friend</span><span class="data-up">neutrality</span></div>
+      <div class="data-row" style="--d:.7s"><span>6'o Clock</span><span>270°</span><span>Best friend</span><span class="data-up">harmony</span></div>
+      <div class="data-row" style="--d:.9s"><span>Nil</span><span>Nil</span><span>Nil</span><span class="data-up">hatred</span></div>
+    </div>
+  </div>
+  <div class="sk-score">Over All <span class="gold-latha">90%</span></div>
+</div>
+
+<div class="scene skill-scene" id="skillPresent">
+  <div class="sk-visual" id="skVisPres">
+    <div class="pres-screen">
+      <div class="pres-slide">
+        <div class="pres-title-bar">Review</div>
+        <div class="pres-bullets">
+          <div class="pres-bullet" style="--d:.4s">📈 நீ யாருனு எனக்கு தெரியும்.நான் யாருனு உனக்கு தெரியும்</div>
+          <div class="pres-bullet" style="--d:.7s">🎯 Achievement - போதும் போதும்.. List-uh ரொம்ப பெருசா போகுது!</div>
+          <div class="pres-bullet" style="--d:1s">🏆 Award - வரும் ஆனா வராது</div>
+        </div>
+      </div>
+      <div class="pres-pointer"></div>
+    </div>
+  </div>
+  <div class="sk-score">அதுக்கு நீ சரிப்பட்டு வரமாட்ட <span class="gold-latha">34%</span></div>
+</div>
+
+<div class="scene skill-scene" id="skillComm">
+  <div class="sk-visual" id="skVisComm">
+    <div class="chat-window">
+      <div class="chat-bubble cb-left" style="--d:.3s">Thambi..?</div>
+      <div class="chat-bubble cb-right" style="--d:.8s">yes ka! 💪</div>
+     <div class="chat-bubble cb-left" style="--d:1.3s"> Thambi ............ 🌟</div>
+      <div class="chat-bubble cb-right" style="--d:1.8s">Yes ka, you're always right 💖</div>
+      <div class="chat-typing" style="--d:2.3s"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+  <div class="sk-score"> Bond <span class="gold-latha">85%</span></div>
+</div>
+
+<div class="scene skill-scene" id="skillCook">
+  <div class="sk-visual" id="skVisCook">
+    <div class="cook-stage">
+      <div class="cook-pot">🍳</div>
+      <div class="cook-steam"><span>~</span><span>~</span><span>~</span></div>
+      <div class="cook-items">
+        <span class="cook-item" style="--d:.2s">🧅</span>
+        <span class="cook-item" style="--d:.5s">🍅</span>
+        <span class="cook-item" style="--d:.8s">🌶️</span>
+        <span class="cook-item" style="--d:1.1s">🧄</span>
+        <span class="cook-item" style="--d:1.4s">🍃</span>
+      </div>
+      <div class="cook-result" style="--d:2s">🍛</div>
+      <div class="cook-stars">⭐⭐⭐⭐⭐</div>
+    </div>
+  </div>
+  <div class="sk-score">Master Chef <span class="gold-latha">100%</span></div>
+</div>
+
+<!-- ═══════════ SCENE 8: STATUS CODES (terminal) ═══════════ -->
+<div class="scene" id="sceneCodes">
+  <div class="terminal-wrap" id="termWrap"></div>
+</div>
+
+<!-- ═══════════ SCENE 9: SWEETS ═══════════ -->
+<div class="scene" id="sceneSweets">
+  <div class="sw-header">🍬 South India's Finest 🍬</div>
+  <div class="sw-stage" id="swStage">
+    <div class="sw-emoji" id="swEmoji"></div>
+    <div class="sw-name" id="swName"></div>
+    <div class="sw-glow"></div>
+  </div>
+  <div class="sw-counter" id="swCounter"></div>
+</div>
+
+<!-- ═══════════ SCENE 10: FINALE ═══════════ -->
+<div class="scene" id="sceneFinale">
+  <!-- Cake cut phase -->
+  <div class="cake-phase" id="cakePhase">
+    <div class="cake-stage">
+      <div class="cake-candles" id="cakeCandles">
+        <span class="candle">🕯️</span><span class="candle">🕯️</span><span class="candle">🕯️</span>
+      </div>
+      <div class="cake-big" id="cakeBig">🎂</div>
+      <div class="cake-knife" id="cakeKnife">🔪</div>
+      <div class="cake-sparks" id="cakeSparks"></div>
+      <div class="cake-halves" id="cakeHalves">
+        <span class="cake-half cake-left">🍰</span>
+        <span class="cake-half cake-right">🍰</span>
+      </div>
+    </div>
+    <div class="cake-tap-hint" id="cakeTapHint">TAP TO CUT 🎂</div>
+  </div>
+  <!-- Rajini-style content phase -->
+  <div class="finale-content" id="finaleContent">
+    <div class="finale-sparks" id="finaleSparks"></div>
+    <div class="finale-dob" id="finaleDob"></div>
+    <div class="finale-msg-wrap" id="finaleMsgWrap"></div>
+    <div class="finale-name-wrap">
+      <div class="finale-label" id="finaleLabel"></div>
+      <div class="finale-name-letters" id="finaleNameLetters"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ SCENE 11: VIJAY TITLE CARD ═══════════ -->
+<div class="scene" id="sceneVijay">
+  <div class="vijay-bg"></div>
+  <div class="vijay-lines" id="vijayLines"></div>
+  <div class="vijay-center">
+    <div class="vijay-top" id="vijayTop"></div>
+    <div class="vijay-name" id="vijayName"></div>
+    <div class="vijay-slash" id="vijaySlash"></div>
+    <div class="vijay-tag" id="vijayTag"></div>
+  </div>
+</div>
+
+<script>
+/* ═══════════════════════════════════════════════════
+   🎬 CINEMATIC ENGINE — NO WEBSITE, JUST CINEMA 🎬
+═══════════════════════════════════════════════════ */
+
+const SCENES = [
+  'scene0','sceneRajini',
+  'scene2','scene3','scene4','scene5','scene6',
+  'skillPowerBI','skillData','skillPresent','skillComm','skillCook',
+  'sceneCodes','sceneSweets','sceneFinale','sceneVijay'
+];
+let curScene = 0;
+let transitioning = false;
+
+/* ════════ PROGRESS DOTS ════════ */
+function buildProgress() {
+  const t = document.getElementById('progTrack');
+  SCENES.forEach((_,i) => {
+    const d = document.createElement('div');
+    d.className = 'prog-dot' + (i===0 ? ' active' : '');
+    t.appendChild(d);
+  });
+}
+
+function updateProgress(idx) {
+  document.querySelectorAll('.prog-dot').forEach((d,i) => {
+    d.classList.toggle('active', i === idx);
+  });
+}
+
+/* ════════ SCENE TRANSITIONS ════════ */
+function goToScene(idx) {
+  if (transitioning || idx < 0 || idx >= SCENES.length || idx === curScene) return;
+  transitioning = true;
+
+  const from = document.getElementById(SCENES[curScene]);
+  const to = document.getElementById(SCENES[idx]);
+
+  from.classList.remove('active');
+  from.classList.add('exit');
+
+  setTimeout(() => {
+    from.classList.remove('exit');
+    to.classList.add('active');
+    curScene = idx;
+    updateProgress(idx);
+    onSceneEnter(idx);
+    transitioning = false;
+  }, 1000);
+}
+
+function nextScene() { goToScene(curScene + 1); }
+
+function flash() {
+  const f = document.getElementById('screenFlash');
+  f.classList.remove('flash');
+  void f.offsetWidth;
+  f.classList.add('flash');
+}
+
+/* ════════ SCENE ENTER HOOKS ════════ */
+function onSceneEnter(idx) {
+  const id = SCENES[idx];
+  
+  if (id === 'sceneRajini') {
+    // Rajini-style letter-by-letter title
+    playRajiniTitle();
+  }
+  else if (id === 'scene2' || id === 'scene3' || id === 'scene4' || id === 'scene5' || id === 'scene6') {
+    // Language scenes auto-advance
+    spawnConfetti(60);
+    setTimeout(nextScene, 6000);
+  }
+  else if (id.startsWith('skill')) {
+    flash();
+    setTimeout(nextScene, 6000);
+  }
+  else if (id === 'sceneCodes') {
+    runTerminalTyping();
+  }
+  else if (id === 'sceneSweets') {
+    playSweetsCarousel();
+  }
+  else if (id === 'sceneFinale') {
+    playCakeCut();
+  }
+  else if (id === 'sceneVijay') {
+    playVijayTitle();
+  }
+}
+
+/* ════════ CONFETTI ════════ */
+const cCvs = document.getElementById('confettiCanvas');
+const cCtx = cCvs.getContext('2d');
+let cPieces = [];
+function resizeCvs() { cCvs.width = innerWidth; cCvs.height = innerHeight; }
+resizeCvs(); addEventListener('resize', resizeCvs);
+
+function spawnConfetti(n) {
+  const cols = ['#ff69b4','#ff1493','#ffd700','#ff4500','#c084fc','#38bdf8','#34d399','#f97316'];
+  for (let i = 0; i < (n||80); i++) cPieces.push({
+    x: Math.random()*cCvs.width, y: -20,
+    w: 6+Math.random()*10, h: 4+Math.random()*6,
+    color: cols[Math.floor(Math.random()*cols.length)],
+    vx: (Math.random()-.5)*3, vy: 2+Math.random()*4,
+    ang: Math.random()*360, spin: (Math.random()-.5)*8, a: 1
+  });
+  if (!confettiRunning) loopConfetti();
+}
+
+let confettiRunning = false;
+function loopConfetti() {
+  confettiRunning = true;
+  cCtx.clearRect(0,0,cCvs.width,cCvs.height);
+  cPieces = cPieces.filter(p => p.a > 0.03 && p.y < cCvs.height+30);
+  cPieces.forEach(p => {
+    cCtx.save(); cCtx.globalAlpha = p.a;
+    cCtx.translate(p.x, p.y); cCtx.rotate(p.ang * Math.PI/180);
+    cCtx.fillStyle = p.color; cCtx.fillRect(-p.w/2, -p.h/2, p.w, p.h);
+    cCtx.restore();
+    p.x += p.vx; p.y += p.vy; p.ang += p.spin;
+    if (p.y > cCvs.height * 0.6) p.a -= 0.015;
+  });
+  if (cPieces.length) requestAnimationFrame(loopConfetti);
+  else confettiRunning = false;
+}
+
+/* ════════ CRACKERS / FIREWORKS ════════ */
+let rockets = [], trails = [], fwRunning = false;
+const fwColors = ['#ff1493','#ffd700','#ff4500','#00ff88','#38bdf8','#c084fc','#ff69b4','#fff'];
+
+function launchCrackers(count, duration) {
+  const end = Date.now() + (duration || 3000);
+  function spawn() {
+    if (Date.now() > end) return;
+    for (let i = 0; i < (count > 10 ? 2 : 1); i++) {
+      rockets.push({
+        x: Math.random() * cCvs.width,
+        y: cCvs.height,
+        tx: cCvs.width * (0.15 + Math.random() * 0.7),
+        ty: cCvs.height * (0.1 + Math.random() * 0.35),
+        speed: 6 + Math.random() * 4,
+        exploded: false,
+        color: fwColors[Math.floor(Math.random() * fwColors.length)],
+        trail: []
+      });
+    }
+    if (!fwRunning) loopFireworks();
+    setTimeout(spawn, 200 + Math.random() * 400);
+  }
+  spawn();
+}
+
+function loopFireworks() {
+  fwRunning = true;
+  // Draw on same confetti canvas
+  rockets = rockets.filter(r => {
+    if (r.exploded) return false;
+    // Move rocket toward target
+    const dx = r.tx - r.x, dy = r.ty - r.y;
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    if (dist < r.speed) {
+      // EXPLODE
+      r.exploded = true;
+      const sparkCount = 30 + Math.floor(Math.random()*30);
+      for (let i = 0; i < sparkCount; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const vel = 1.5 + Math.random() * 4;
+        trails.push({
+          x: r.tx, y: r.ty,
+          vx: Math.cos(angle) * vel,
+          vy: Math.sin(angle) * vel,
+          color: Math.random() > 0.3 ? r.color : fwColors[Math.floor(Math.random()*fwColors.length)],
+          life: 1,
+          decay: 0.015 + Math.random() * 0.02,
+          r: 1.5 + Math.random() * 2
+        });
+      }
+      return false;
+    }
+    r.x += (dx/dist) * r.speed;
+    r.y += (dy/dist) * r.speed;
+    // Draw rocket trail
+    r.trail.push({x:r.x, y:r.y, a:1});
+    if (r.trail.length > 8) r.trail.shift();
+    r.trail.forEach((t,idx) => {
+      cCtx.beginPath();
+      cCtx.arc(t.x, t.y, 2, 0, Math.PI*2);
+      cCtx.fillStyle = `rgba(255,255,255,${idx/r.trail.length * 0.6})`;
+      cCtx.fill();
+    });
+    // Rocket head
+    cCtx.beginPath();
+    cCtx.arc(r.x, r.y, 3, 0, Math.PI*2);
+    cCtx.fillStyle = '#fff';
+    cCtx.fill();
+    return true;
+  });
+
+  // Draw explosion trails
+  trails = trails.filter(t => {
+    t.x += t.vx; t.y += t.vy;
+    t.vy += 0.04; // gravity
+    t.life -= t.decay;
+    if (t.life <= 0) return false;
+    cCtx.beginPath();
+    cCtx.arc(t.x, t.y, t.r * t.life, 0, Math.PI*2);
+    cCtx.fillStyle = t.color;
+    cCtx.globalAlpha = t.life;
+    cCtx.fill();
+    cCtx.globalAlpha = 1;
+    return true;
+  });
+
+  if (rockets.length || trails.length) requestAnimationFrame(loopFireworks);
+  else fwRunning = false;
+}
+
+/* ════════ AMBIENT PARTICLES ════════ */
+const pCvs = document.getElementById('particleCanvas');
+const pCtx = pCvs.getContext('2d');
+let particles = [];
+
+function resizePCvs() { pCvs.width = innerWidth; pCvs.height = innerHeight; }
+resizePCvs(); addEventListener('resize', resizePCvs);
+
+function initParticles() {
+  for (let i = 0; i < 60; i++) particles.push({
+    x: Math.random()*pCvs.width,
+    y: Math.random()*pCvs.height,
+    r: Math.random()*2 + 0.5,
+    vx: (Math.random()-.5)*.3,
+    vy: (Math.random()-.5)-.4,
+    a: Math.random()*.4 + .1
+  });
+  loopParticles();
+}
+
+function loopParticles() {
+  pCtx.clearRect(0,0,pCvs.width,pCvs.height);
+  particles.forEach(p => {
+    pCtx.beginPath();
+    pCtx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+    pCtx.fillStyle = `rgba(255,105,180,${p.a})`;
+    pCtx.fill();
+    p.x += p.vx; p.y += p.vy;
+    if (p.y < -10) { p.y = pCvs.height + 10; p.x = Math.random()*pCvs.width; }
+    if (p.x < -10 || p.x > pCvs.width+10) p.x = Math.random()*pCvs.width;
+  });
+  requestAnimationFrame(loopParticles);
+}
+
+/* ════════ SCENE 0: AGE 33 → 34 TRANSITION ════════ */
+let scene0Started = false;
+function startScene0() {
+  if (scene0Started) return;
+  scene0Started = true;
+  const btn = document.getElementById('startBtn');
+  btn.style.display = 'none';
+  // Auto-start music on first interaction — start from 55 seconds
+  const audio = document.getElementById('bgMusic');
+  audio.currentTime = 55;
+  audio.volume = 0.7;
+  audio.play().catch(() => {});
+  playAgeReveal();
+}
+document.getElementById('startBtn').addEventListener('click', startScene0);
+document.getElementById('startBtn').addEventListener('touchend', function(e) {
+  e.preventDefault();
+  startScene0();
+});
+
+function playAgeReveal() {
+  const age33 = document.getElementById('age33');
+  const age34 = document.getElementById('age34');
+  const shards = document.getElementById('ageShards');
+
+  // Step 1: 33 zooms in dramatically
+  age33.classList.add('age-zoom-in');
+
+  // Step 2: After 1.5s, 33 shatters
+  setTimeout(() => {
+    flash();
+    age33.style.display = 'none';
+
+    // Create shards flying out
+    const chars = ['3','3'];
+    for (let c = 0; c < chars.length; c++) {
+      for (let i = 0; i < 6; i++) {
+        const s = document.createElement('div');
+        s.className = 'age-shard';
+        s.textContent = chars[c];
+        s.style.setProperty('--rx', (Math.random()-0.5)*200 + 'px');
+        s.style.setProperty('--ry', (Math.random()-0.5)*200 + 'px');
+        s.style.setProperty('--rot', (Math.random()-0.5)*360 + 'deg');
+        s.style.left = (40 + c*12) + '%';
+        shards.appendChild(s);
+      }
+    }
+    spawnConfetti(80);
+  }, 1500);
+
+  // Step 3: 34 appears with golden glow
+  setTimeout(() => {
+    flash();
+    age34.classList.add('age-reveal');
+    spawnConfetti(120);
+    launchCrackers(9, 2500);
+  }, 2400);
+
+  // Step 4: Auto-go to Rajini title
+  setTimeout(() => {
+    nextScene();
+  }, 4500);
+}
+
+/* ════════ RAJINI-STYLE TITLE CARD ════════ */
+function playRajiniTitle() {
+  flash();
+  const titleEl = document.getElementById('rajiniTitle');
+  const nameEl = document.getElementById('rajiniName');
+  const sparksEl = document.getElementById('rajiniSparks');
+  titleEl.innerHTML = '';
+  nameEl.innerHTML = '';
+  
+  const line1 = 'HAPPY BIRTHDAY';
+  const line2 = 'LATHA AKKA';
+  
+  // Letter-by-letter for "HAPPY BIRTHDAY"
+  let delay = 200;
+  for (let i = 0; i < line1.length; i++) {
+    setTimeout(() => {
+      const span = document.createElement('span');
+      span.className = 'rajini-letter';
+      span.textContent = line1[i] === ' ' ? '\u00A0' : line1[i];
+      span.style.animationDelay = '0s';
+      titleEl.appendChild(span);
+      // Spark effect on each letter
+      spawnRajiniSpark(sparksEl);
+    }, delay + i * 180);
+  }
+  
+  // After "HAPPY BIRTHDAY", dramatic pause then "LATHA" in gold
+  const lathaStart = delay + line1.length * 180 + 600;
+  
+  setTimeout(() => flash(), lathaStart - 100);
+  
+  for (let i = 0; i < line2.length; i++) {
+    setTimeout(() => {
+      const span = document.createElement('span');
+      span.className = 'rajini-letter rajini-gold-letter';
+      span.textContent = line2[i];
+      span.style.animationDelay = '0s';
+      nameEl.appendChild(span);
+      spawnRajiniSpark(sparksEl);
+      if (i === line2.length - 1) {
+        // Final flash + big confetti after last letter
+        setTimeout(() => {
+          flash();
+          spawnConfetti(150);
+          nameEl.classList.add('rajini-name-glow');
+        }, 400);
+      }
+    }, lathaStart + i * 280);
+  }
+  
+  // Auto-advance after the full reveal
+  const totalTime = lathaStart + line2.length * 280 + 4500;
+  setTimeout(nextScene, totalTime);
+}
+
+function spawnRajiniSpark(container) {
+  for (let j = 0; j < 3; j++) {
+    const s = document.createElement('div');
+    s.className = 'rajini-spark';
+    s.style.left = (30 + Math.random()*40) + '%';
+    s.style.top = (30 + Math.random()*40) + '%';
+    s.style.setProperty('--sx', (Math.random()-0.5)*120 + 'px');
+    s.style.setProperty('--sy', (Math.random()-0.5)*120 + 'px');
+    container.appendChild(s);
+    setTimeout(() => s.remove(), 7000);
+  }
+}
+
+/* ════════ CAKE CUT + FINALE ════════ */
+function playCakeCut() {
+  const phase = document.getElementById('cakePhase');
+  const knife = document.getElementById('cakeKnife');
+  const sparksEl = document.getElementById('cakeSparks');
+  const cakeHalves = document.getElementById('cakeHalves');
+  const content = document.getElementById('finaleContent');
+  const hint = document.getElementById('cakeTapHint');
+
+  // Show tap hint after 1s
+  setTimeout(() => hint.classList.add('show'), 1500);
+
+  // Wait for tap to cut
+  phase.addEventListener('click', doCut, { once: true });
+  phase.addEventListener('touchend', function(e){ e.preventDefault(); doCut(); }, { once: true });
+
+  function doCut() {
+    hint.classList.remove('show');
+
+    // Knife swings in
+    knife.classList.add('cutting');
+
+    // After knife lands — sparks burst, cake splits
+    setTimeout(() => {
+      // Multiple waves of sparks
+      burstSparks(sparksEl, 25);
+      setTimeout(() => burstSparks(sparksEl, 15), 300);
+      setTimeout(() => burstSparks(sparksEl, 10), 600);
+
+      // Candles blow out
+      document.getElementById('cakeCandles').classList.add('blown');
+
+      // Cake emoji hides, halves split apart
+      document.getElementById('cakeBig').classList.add('sliced');
+      cakeHalves.classList.add('split');
+
+      flash();
+      spawnConfetti(250);
+      launchCrackers(15, 1500);
+    }, 1200);
+
+    // Second flash + more confetti
+    setTimeout(() => {
+      flash();
+      spawnConfetti(150);
+    }, 2200);
+
+    // Hide cake, start Rajini-style content reveal
+    setTimeout(() => {
+      phase.style.display = 'none';
+      content.classList.add('show');
+      playFinaleRajini();
+    }, 3000);
+  }
+}
+
+function burstSparks(container, count) {
+  const colors = ['#ffd700','#ff69b4','#ff4500','#ffa500','#c084fc','#38bdf8','#34d399','#fff'];
+  for (let i = 0; i < count; i++) {
+    const sp = document.createElement('div');
+    sp.className = 'cake-spark';
+    sp.style.background = colors[Math.floor(Math.random()*colors.length)];
+    const angle = Math.random() * Math.PI * 2;
+    const dist = 80 + Math.random() * 160;
+    sp.style.setProperty('--tx', Math.cos(angle)*dist + 'px');
+    sp.style.setProperty('--ty', Math.sin(angle)*dist + 'px');
+    sp.style.width = (4 + Math.random()*6) + 'px';
+    sp.style.height = sp.style.width;
+    container.appendChild(sp);
+    setTimeout(() => sp.remove(), 1000);
+  }
+}
+
+/* ════════ RAJINI-STYLE FINALE REVEAL ════════ */
+function playFinaleRajini() {
+  const sparksEl = document.getElementById('finaleSparks');
+  const dobEl = document.getElementById('finaleDob');
+  const msgWrap = document.getElementById('finaleMsgWrap');
+  const labelEl = document.getElementById('finaleLabel');
+  const nameWrap = document.getElementById('finaleNameLetters');
+
+  flash();
+
+  // Step 1: DOB counter — "Since 24 • 04 • 1992"
+  const dobText = 'SINCE 24 • 04 • 1992';
+  let d = 200;
+  for (let i = 0; i < dobText.length; i++) {
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.className = 'finale-dob-letter';
+      s.textContent = dobText[i] === ' ' ? '\u00A0' : dobText[i];
+      dobEl.appendChild(s);
+    }, d + i * 60);
+  }
+
+  // Step 2: After DOB, show "34 years of being amazing"
+  const afterDob = d + dobText.length * 60 + 500;
+  setTimeout(() => {
+    const ageTag = document.createElement('div');
+    ageTag.className = 'finale-age-tag';
+    ageTag.innerHTML = '34 years of being <span class="gold-latha">amazing</span>';
+    dobEl.appendChild(ageTag);
+  }, afterDob);
+
+  // Step 3: Message — letter by letter Rajini style
+  const msgLine1 = 'HAPPY BIRTHDAY';
+  const msgLine2 = 'LATHA AKKA';
+  const msgStart = afterDob + 800;
+
+  setTimeout(() => flash(), msgStart - 50);
+
+  for (let i = 0; i < msgLine1.length; i++) {
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.className = 'rajini-letter finale-r-letter';
+      s.textContent = msgLine1[i] === ' ' ? '\u00A0' : msgLine1[i];
+      msgWrap.appendChild(s);
+      spawnFinaleSpark(sparksEl);
+    }, msgStart + i * 140);
+  }
+
+  // Line break + LATHA AKKA in gold
+  const lathaStart = msgStart + msgLine1.length * 140 + 400;
+  setTimeout(() => {
+    msgWrap.appendChild(document.createElement('br'));
+    flash();
+  }, lathaStart - 100);
+
+  for (let i = 0; i < msgLine2.length; i++) {
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.className = 'rajini-letter rajini-gold-letter finale-r-letter';
+      s.textContent = msgLine2[i] === ' ' ? '\u00A0' : msgLine2[i];
+      msgWrap.appendChild(s);
+      spawnFinaleSpark(sparksEl);
+      if (i === msgLine2.length - 1) {
+        setTimeout(() => { flash(); spawnConfetti(180); }, 300);
+      }
+    }, lathaStart + i * 220);
+  }
+
+  // Step 4: "with love from" label
+  const fromStart = lathaStart + msgLine2.length * 220 + 1200;
+  setTimeout(() => {
+    labelEl.textContent = 'WITH LOVE FROM';
+    labelEl.classList.add('show');
+  }, fromStart);
+
+  // Step 5: KARTHIKRAJ letter by letter in gold
+  const name1 = 'KARTHIKRAJ';
+  const nameStart = fromStart + 800;
+  setTimeout(() => flash(), nameStart - 50);
+
+  for (let i = 0; i < name1.length; i++) {
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.className = 'rajini-letter rajini-gold-letter finale-name-letter';
+      s.textContent = name1[i];
+      nameWrap.appendChild(s);
+      spawnFinaleSpark(sparksEl);
+      if (i === name1.length - 1) {
+        setTimeout(() => { flash(); spawnConfetti(200); launchCrackers(18, 3000); }, 300);
+      }
+    }, nameStart + i * 200);
+  }
+
+  // Step 6: After 3s pause, morph KARTHIKRAJ → THAMBI
+  const morphStart = nameStart + name1.length * 200 + 3000;
+  setTimeout(() => {
+    nameWrap.classList.add('morph-out');
+    setTimeout(() => {
+      nameWrap.innerHTML = '';
+      nameWrap.classList.remove('morph-out');
+      flash();
+      const name2 = 'THAMBI';
+      for (let i = 0; i < name2.length; i++) {
+        setTimeout(() => {
+          const s = document.createElement('span');
+          s.className = 'rajini-letter rajini-gold-letter finale-name-letter';
+          s.textContent = name2[i];
+          nameWrap.appendChild(s);
+          spawnFinaleSpark(sparksEl);
+          if (i === name2.length - 1) {
+            setTimeout(() => { flash(); spawnConfetti(100); launchCrackers(10, 3000); }, 300);
+            // Auto-advance to Vijay title after THAMBI reveal
+            setTimeout(nextScene, 4000);
+          }
+        }, 200 + i * 200);
+      }
+    }, 600);
+  }, morphStart);
+}
+
+function spawnFinaleSpark(container) {
+  for (let j = 0; j < 2; j++) {
+    const s = document.createElement('div');
+    s.className = 'rajini-spark';
+    s.style.left = (20 + Math.random()*60) + '%';
+    s.style.top = (20 + Math.random()*60) + '%';
+    s.style.setProperty('--sx', (Math.random()-0.5)*100 + 'px');
+    s.style.setProperty('--sy', (Math.random()-0.5)*100 + 'px');
+    container.appendChild(s);
+    setTimeout(() => s.remove(), 700);
+  }
+}
+
+/* ════════ VIJAY-STYLE TITLE CARD ════════ */
+function playVijayTitle() {
+  const topEl = document.getElementById('vijayTop');
+  const nameEl = document.getElementById('vijayName');
+  const slashEl = document.getElementById('vijaySlash');
+  const tagEl = document.getElementById('vijayTag');
+  const linesEl = document.getElementById('vijayLines');
+
+  // Spawn speed lines
+  for (let i = 0; i < 30; i++) {
+    const l = document.createElement('div');
+    l.className = 'vijay-speed-line';
+    l.style.top = Math.random() * 100 + '%';
+    l.style.animationDelay = Math.random() * 2 + 's';
+    l.style.animationDuration = (0.5 + Math.random() * 1) + 's';
+    l.style.height = (1 + Math.random() * 3) + 'px';
+    l.style.opacity = 0.1 + Math.random() * 0.3;
+    linesEl.appendChild(l);
+  }
+
+  // Step 1: "A BIRTHDAY FILM BY" typed
+  const topText = 'A Special Day To Celebrate';
+  let d = 500;
+  for (let i = 0; i < topText.length; i++) {
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.className = 'vijay-top-letter';
+      s.textContent = topText[i] === ' ' ? '\u00A0' : topText[i];
+      topEl.appendChild(s);
+    }, d + i * 50);
+  }
+
+  // Step 2: Name slam — "LATHA AKKA" in Vijay style
+  const nameText = 'Latha Akka';
+  const nameStart = d + topText.length * 50 + 800;
+
+  setTimeout(() => flash(), nameStart - 50);
+
+  for (let i = 0; i < nameText.length; i++) {
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.className = 'vijay-letter';
+      s.textContent = nameText[i];
+      nameEl.appendChild(s);
+    }, nameStart + i * 120);
+  }
+
+  // Step 3: Red slash underline
+  const slashTime = nameStart + nameText.length * 120 + 400;
+  setTimeout(() => {
+    flash();
+    slashEl.classList.add('show');
+    spawnConfetti(150);
+    launchCrackers(15, 3000);
+  }, slashTime);
+
+  // Step 4: Tagline
+  const tagTime = slashTime + 800;
+  const tagText = 'Super Women - Wishing you a fantastic year ahead filled with success and great achievements';
+//   setTimeout(() => {
+//     tagEl.textContent = tagText;
+//     tagEl.classList.add('show');
+//   }, tagTime);
+  for (let i = 0; i < tagText.length; i++) {
+    setTimeout(() => {
+      const s = document.createElement('span');
+      s.className = 'vijay-top-letter';
+      s.textContent = tagText[i] === ' ' ? '\u00A0' : tagText[i];
+      tagEl.appendChild(s);
+    }, d + i * 50);
+    tagEl.classList.add('show');
+  }
+}
+
+/* ════════ TERMINAL TYPING ENGINE ════════ */
+const TERM_LINES = [
+  {type:'cmd',  text:'$ curl https://latha-akka.api/friendship'},
+  {type:'code', text:'200 OK'},
+  {type:'msg',  text:'"Our friendship is perfect — no errors found"'},
+  {type:'cmd',  text:'$ curl https://latha-akka.api/office-calls'},
+  {type:'code', text:'403 Forbidden'},
+  {type:'msg',  text:'"No one in office can call Thambi Ka except me 😎"'},
+  {type:'cmd',  text:'$ curl https://latha-akka.api/presentation'},
+  {type:'code', text:'201 Created'},
+  {type:'msg',  text:'"Your amazing presentation skills create magic moments"'},
+  {type:'cursor', text:'$ '},
+];
+
+function runTerminalTyping() {
+  const wrap = document.getElementById('termWrap');
+  wrap.innerHTML = '';
+  let lineIdx = 0;
+
+  function typeLine() {
+    if (lineIdx >= TERM_LINES.length) {
+      // Add blinking cursor at end
+      const cur = document.createElement('span');
+      cur.className = 'term-cursor';
+      wrap.lastChild.appendChild(cur);
+      setTimeout(nextScene, 1500);
+      return;
+    }
+    const entry = TERM_LINES[lineIdx];
+    const div = document.createElement('div');
+    div.className = 'term-line term-visible';
+
+    if (entry.type === 'cursor') {
+      const pr = document.createElement('span');
+      pr.className = 'term-prompt';
+      pr.textContent = '$ ';
+      div.appendChild(pr);
+      const cur = document.createElement('span');
+      cur.className = 'term-cursor';
+      div.appendChild(cur);
+      wrap.appendChild(div);
+      wrap.scrollTop = wrap.scrollHeight;
+      setTimeout(nextScene, 1200);
+      return;
+    }
+
+    const span = document.createElement('span');
+    if (entry.type === 'cmd') span.className = 'term-prompt';
+    else if (entry.type === 'code') span.className = 'term-code';
+    else span.className = 'term-msg';
+    span.textContent = '';
+    div.appendChild(span);
+    wrap.appendChild(div);
+
+    let charIdx = 0;
+    const speed = entry.type === 'cmd' ? 28 : entry.type === 'code' ? 40 : 22;
+    const pause = entry.type === 'code' ? 400 : entry.type === 'msg' ? 300 : 200;
+
+    function typeChar() {
+      if (charIdx < entry.text.length) {
+        span.textContent += entry.text[charIdx];
+        charIdx++;
+        wrap.scrollTop = wrap.scrollHeight;
+        setTimeout(typeChar, speed);
+      } else {
+        lineIdx++;
+        setTimeout(typeLine, pause);
+      }
+    }
+    typeChar();
+  }
+  typeLine();
+}
+
+/* ════════ SKILLS (animations handled via CSS) ════════ */
+
+/* ════════ SWEETS ════════ */
+const SWEETS = [
+  {e:'🟡',n:'Ladoo'},{e:'🍮',n:'Payasam'},{e:'🟠',n:'Kesari'},
+  {e:'🍬',n:'Halwa'},{e:'🌀',n:'Murukku'},{e:'🍩',n:'Gulab Jamun'},
+  {e:'🧁',n:'Mysore Pak'},{e:'🍡',n:'Sweet'},
+];
+
+function playSweetsCarousel() {
+  const emojiEl = document.getElementById('swEmoji');
+  const nameEl = document.getElementById('swName');
+  const counterEl = document.getElementById('swCounter');
+  let idx = 0;
+
+  function showSweet() {
+    if (idx >= SWEETS.length) {
+      setTimeout(nextScene, 800);
+      return;
+    }
+    const s = SWEETS[idx];
+    // Animate out
+    emojiEl.classList.remove('sw-in');
+    emojiEl.classList.add('sw-out');
+    nameEl.classList.remove('sw-in');
+    nameEl.classList.add('sw-out');
+
+    setTimeout(() => {
+      emojiEl.textContent = s.e;
+      nameEl.textContent = s.n;
+      counterEl.textContent = ""//(idx + 1) + ' / ' + SWEETS.length;
+      // Animate in
+      emojiEl.classList.remove('sw-out');
+      emojiEl.classList.add('sw-in');
+      nameEl.classList.remove('sw-out');
+      nameEl.classList.add('sw-in');
+      idx++;
+      setTimeout(showSweet, 1200);
+    }, idx === 0 ? 100 : 300);
+  }
+  showSweet();
+}
+
+/* ════════ TAMIL BEAT (Web Audio) ════════ */
+/* Music replaced with Kannukkulle audio */
+
+/* ════════ INITIALIZATION ════════ */
+document.addEventListener('DOMContentLoaded', () => {
+  buildProgress();
+  initParticles();
+});
+</script>
+
+</body>
+</html>
